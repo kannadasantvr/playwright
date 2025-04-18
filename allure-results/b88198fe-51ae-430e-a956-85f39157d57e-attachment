@@ -1,0 +1,44 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: page handle
+- Location: D:\Playwright_test\tests\mutiple tab.spec.js:4:5
+
+# Error details
+
+```
+Error: page.click: Target page, context or browser has been closed
+Call log:
+  - waiting for locator('//li[@class="col col-6-12 flex"]')
+
+    at D:\Playwright_test\tests\mutiple tab.spec.js:10:14
+```
+
+# Test source
+
+```ts
+   1 | import{test,expect} from '@playwright/test'
+   2 |
+   3 |
+   4 | test('page handle',async ({page})=>{
+   5 |   await page.goto('https://www.flipkart.com/')
+   6 |   
+   7 |   await page.fill('[class="Pke_EE"]','iphone15')
+   8 |   await page.press('[class="Pke_EE"]', 'Enter');
+   9 |   await page.locator('//div[text()="Apple iPhone 15 (Black, 128 GB)"]').click()
+> 10 |   await page.click('//li[@class="col col-6-12 flex"]')
+     |              ^ Error: page.click: Target page, context or browser has been closed
+  11 |   await page.setDefaultTimeout(7000)
+  12 |   await page.pause()
+  13 |
+  14 |
+  15 |   
+  16 |
+  17 |
+  18 | })
+```

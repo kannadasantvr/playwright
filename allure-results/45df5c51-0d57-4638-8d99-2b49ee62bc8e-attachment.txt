@@ -1,0 +1,2 @@
+Different Range: You selected a range of 1869 days.
+$Price Value: $137 - $343
